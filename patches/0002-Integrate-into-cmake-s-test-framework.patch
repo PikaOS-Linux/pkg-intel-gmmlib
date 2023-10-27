@@ -1,0 +1,28 @@
+From: Sebastian Ramacher <sramacher@debian.org>
+Date: Wed, 14 Nov 2018 22:07:54 +0100
+Subject: Integrate into cmake's test framework
+
+---
+ Source/GmmLib/ULT/CMakeLists.txt | 9 ---------
+ 1 file changed, 9 deletions(-)
+
+diff --git a/Source/GmmLib/ULT/CMakeLists.txt b/Source/GmmLib/ULT/CMakeLists.txt
+index 52e0944..b066854 100644
+--- a/Source/GmmLib/ULT/CMakeLists.txt
++++ b/Source/GmmLib/ULT/CMakeLists.txt
+@@ -163,15 +163,6 @@ target_link_libraries(${EXE_NAME}
+     dl
+ )
+ 
+-add_custom_target(Run_ULT ALL DEPENDS GMMULT)
+-
+-add_custom_command(
+-    TARGET Run_ULT
+-    POST_BUILD
+-    COMMAND echo running ULTs
+-    COMMAND "${CMAKE_COMMAND}" -E env "LD_LIBRARY_PATH=$<TARGET_FILE_DIR:igfx_gmmumd_dll>" ${CMAKE_CFG_INTDIR}/${EXE_NAME} --gtest_filter=CTest*
+-)
+-
+ add_test(
+     NAME ULT
+     COMMAND env "LD_LIBRARY_PATH=$<TARGET_FILE_DIR:igfx_gmmumd_dll>" $<TARGET_FILE:${EXE_NAME}> --gtest_filter=CTest*

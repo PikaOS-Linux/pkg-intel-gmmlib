@@ -3,9 +3,9 @@
 DEBIAN_FRONTEND=noninteractive
 
 # Clone Upstream
-mkdir -p ./src-pkg-name
-cp -rvf ./debian ./src-pkg-name/
-cd ./src-pkg-name/
+git clone https://github.com/intel/gmmlib ./intel-gmmlib -b intel-gmmlib-22.3.12
+cp -rvf ./debian ./intel-gmmlib/
+cd ./intel-gmmlib/
 
 # Get build deps
 apt-get build-dep ./ -y
