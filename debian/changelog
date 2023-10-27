@@ -1,6 +1,6 @@
-intel-gmmlib (22.3.12-100pika1) pikauwu; urgency=medium
+intel-gmmlib (23.3.12-100pika1) pikauwu; urgency=medium
 
-  * New upstream version 22.3.12
+  * New upstream version 23.3.12
 
  -- Sebastian Ramacher <sramacher@debian.org>  Fri, 21 Jul 2023 22:03:26 +0200
 
